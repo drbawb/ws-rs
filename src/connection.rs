@@ -609,7 +609,10 @@ where
                             end
                         };
                         res.get_mut().truncate(end);
-                    }
+                    } else {
+						// NOTE: handshake not ready, skip parsing response
+						return Ok(());
+					}
                 }
             }
         }
